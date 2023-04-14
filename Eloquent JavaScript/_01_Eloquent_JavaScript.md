@@ -28,7 +28,7 @@ console.log(total) //> 55
 * Special Numbers:
 	- `Infinity` and `-Infinity`: `Infinity -1` is still Infinity 
 	- `NaN`: "Not a Number"; for example, try to calculate 0 / 0
-	- `Number()` function to convert string to a number. Similiar: `String()` and `Boolean`
+	- `Number()` function to convert string to a number. Similiar: `String()` and `Boolean()`
 	- `Number.isNaN()` function that returns true only if the argument it is given is NaN
 * Strings: 
 	- 'single quotes', "double quotes", or \`backticks\`
@@ -250,3 +250,18 @@ console.log(findSolution(24));
 
 [Chapter 4](https://eloquentjavascript.net/04_data.html)
 
+ 
+* Array: the first index is zero not one
+```JS
+let array = [2, 3, 5, 7, 11];
+// Zero-based counting:
+array[0]; //> 2
+// Expression gets resolved to an index:
+array[2 - 1]; //> 3
+```
+* Properties: almost all JS values have properties. Properties can be accessed with a dot and with square brackets 
+	* Dot: word after dot is the literal name of the property, e.g. ```array.lenght```. Only works with valid binding names
+	* Brackets: expression is evaluated to get property name, e.g. ```array["lenght"]```
+* Elements of array are stored as array's properties
+* Methods: properties that contain functions are generally called methods of the value they belong to (e.g. the push and pop methods for stacks/arrays)
+* Objects: 
