@@ -264,4 +264,43 @@ array[2 - 1]; //> 3
 	* Brackets: expression is evaluated to get property name, e.g. ```array["lenght"]```
 * Elements of array are stored as array's properties
 * Methods: properties that contain functions are generally called methods of the value they belong to (e.g. the push and pop methods for stacks/arrays)
-* Objects: 
+* Objects: arbitrary collections of properties 
+	* create with ```{}``` as an expression
+	* reading a property that doesn’t exist will give the value undefined
+	* assign a value to property or create a new one with the ```=``` operator or use ```Object.assign()```
+	* find out what properties an object has with the ```Object.keys``` function
+	* arrays are just specialized objects for sequences of things
+```JS
+let anObject = {left: 1, right: 2};
+anObject.left //> 1
+delete anObject.left;
+anObject.left //> undefined
+
+anObject.middle //> undefined
+anObject.midde = 3
+console.log("right" in anObject); //> true
+Object.assign(anObject, {newProperty: 42})
+
+```
+* Mutability
+	* With objects, there is a difference between having two references to the same object and having two different objects that contain the same properties. 
+	* Identity: object1 and object2 bindings grasp the same object, which is why changing object1 also changes the value of object2. object3 points to different object
+	* const binding to an object can itself not be changed and will continue to point at the same object, the contents of that object might change
+	* Comparisons with ```==``` compares by identity. Comparing different objects with identical proberties will return ```false```
+```JS
+let object1 = {value: 10};
+let object2 = object1;
+let object3 = {value: 10};
+
+const score = {visitors: 0, home: 0};
+// This is okay
+score.visitors = 1;
+// This isn't allowed
+score = {visitors: 1, home: 1};
+```
+* The lycanthrope's log: example of statistical analysis on a frequency table with the phi coefficient (see respective example script)
+
+```JS
+// loads data in the variable JOURNAL
+require('./data/journal.js')
+```
